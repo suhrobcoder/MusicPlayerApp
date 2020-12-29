@@ -60,7 +60,7 @@ class MusicDataSource(
             .setIconBitmap(song.description.iconBitmap)
             .build()
         MediaBrowserCompat.MediaItem(desc, FLAG_PLAYABLE)
-    }
+    }.toMutableList()
 
     private val onReadyListeners = mutableListOf<(Boolean) -> Unit>()
 
