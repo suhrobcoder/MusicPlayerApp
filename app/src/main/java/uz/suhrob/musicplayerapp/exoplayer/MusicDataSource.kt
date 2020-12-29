@@ -1,4 +1,4 @@
-package uz.suhrob.musicplayerapp.data.datasource
+package uz.suhrob.musicplayerapp.exoplayer
 
 import android.content.Context
 import android.graphics.BitmapFactory
