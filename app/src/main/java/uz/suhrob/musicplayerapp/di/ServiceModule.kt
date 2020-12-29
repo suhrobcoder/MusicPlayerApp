@@ -12,6 +12,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ServiceComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ServiceScoped
+import uz.suhrob.musicplayerapp.exoplayer.MusicDataSource
 
 @InstallIn(ServiceComponent::class)
 @Module
@@ -38,4 +39,10 @@ object ServiceModule {
     fun provideDataSourceFactory(
         @ApplicationContext context: Context
     ) = DefaultDataSourceFactory(context, Util.getUserAgent(context, "Music Player App"))
+
+    @ServiceScoped
+    @Provides
+    fun provideMusicDataSource(
+        @ApplicationContext context: Context
+    ) = MusicDataSource(context)
 }

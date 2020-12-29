@@ -20,7 +20,7 @@ class MusicDataSource(
     private val context: Context
 ) {
 
-    private var songs = emptyList<MediaMetadataCompat>()
+    var songs = emptyList<MediaMetadataCompat>()
 
     fun fetchMediaMetadata() {
         state = State.STATE_INITIALIZING
