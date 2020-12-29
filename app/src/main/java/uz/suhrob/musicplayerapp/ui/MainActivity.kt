@@ -1,8 +1,9 @@
-package uz.suhrob.musicplayerapp
+package uz.suhrob.musicplayerapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dagger.hilt.android.AndroidEntryPoint
+import uz.suhrob.musicplayerapp.R
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

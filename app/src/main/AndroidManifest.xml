@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicPlayerApp"
         android:name=".MusicPlayerApplication">
-        <activity android:name=".MainActivity">
+        <service android:name=".exoplayer.MusicService">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
