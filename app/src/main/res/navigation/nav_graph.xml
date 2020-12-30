@@ -6,11 +6,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="uz.suhrob.musicplayerapp.ui.fragments.HomeFragment"
-        android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_songFragment"
-            app:destination="@id/songFragment" />
-    </fragment>
+        android:label="HomeFragment" />
     <fragment
         android:id="@+id/songFragment"
         android:name="uz.suhrob.musicplayerapp.ui.fragments.SongFragment"

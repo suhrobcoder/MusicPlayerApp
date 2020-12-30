@@ -20,8 +20,8 @@ class MusicServiceConnection(
     private val _playbackState = MutableLiveData<PlaybackStateCompat?>()
     val playbackState: LiveData<PlaybackStateCompat?> = _playbackState
 
-    private val _currentPlayingSong = MutableLiveData<MediaMetadataCompat>()
-    val currentPlayingSong: LiveData<MediaMetadataCompat> = _currentPlayingSong
+    private val _currentPlayingSong = MutableLiveData<MediaMetadataCompat?>()
+    val currentPlayingSong: LiveData<MediaMetadataCompat?> = _currentPlayingSong
 
     private val mediaBrowserConnectionCallback = MediaBrowserConnectionCallback(context)
 

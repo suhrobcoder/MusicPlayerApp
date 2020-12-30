@@ -6,6 +6,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import timber.log.Timber
 import uz.suhrob.musicplayerapp.data.model.Song
 import uz.suhrob.musicplayerapp.exoplayer.MusicServiceConnection
 import uz.suhrob.musicplayerapp.exoplayer.isPlayEnabled
@@ -25,6 +26,7 @@ class MainViewModel @ViewModelInject constructor(
     val playbackState = musicServiceConnection.playbackState
 
     init {
+        Timber.d("Mainviewmodel initialized")
         _mediaItems.postValue(Resource.Loading)
         musicServiceConnection.subscribe(
             MEDIA_ROOT_ID,

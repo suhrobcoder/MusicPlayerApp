@@ -14,6 +14,7 @@ import androidx.loader.content.CursorLoader
 import com.google.android.exoplayer2.source.ConcatenatingMediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import timber.log.Timber
 import uz.suhrob.musicplayerapp.data.model.Song
 
 class MusicDataSource(
@@ -125,6 +126,7 @@ class MusicDataSource(
             }
         }
         cursor?.close()
+        Timber.d("Songs MusicData Source ${list.size}")
         return list
     }
 }

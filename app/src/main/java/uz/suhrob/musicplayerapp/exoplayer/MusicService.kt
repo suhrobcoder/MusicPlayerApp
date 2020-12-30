@@ -13,6 +13,7 @@ import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
 import com.google.android.exoplayer2.ext.mediasession.TimelineQueueNavigator
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 import uz.suhrob.musicplayerapp.exoplayer.callbacks.MusicPlaybackPreparer
 import uz.suhrob.musicplayerapp.exoplayer.callbacks.MusicPlayerEventListener
@@ -22,6 +23,7 @@ import javax.inject.Inject
 
 private const val SERVICE_TAG = "MusicService"
 
+@AndroidEntryPoint
 class MusicService : MediaBrowserServiceCompat() {
 
     @Inject
@@ -56,9 +58,7 @@ class MusicService : MediaBrowserServiceCompat() {
 
     override fun onCreate() {
         super.onCreate()
-        serviceScope.launch {
-
-        }
+        musicDataSource.fetchMediaMetadata()
 
         val activityIndent = packageManager?.getLaunchIntentForPackage(packageName)?.let {
             PendingIntent.getActivity(this, 0, it, 0)
